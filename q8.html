@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================================
+         PAGE: My Online Profile
+         SEO & SOCIAL: meta tags, Open Graph, favicon, iframe embed
+         ============================================================ -->
+
+    <!-- ---- CHARACTER SET & VIEWPORT ---- -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ---- FAVICON (using emoji as fallback + real .ico) ---- -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f464.png" />
+    <!-- fallback: modern browsers use the emoji SVG above; PNG is for compatibility -->
+
+    <!-- ---- PRIMARY META TAGS (SEO & description) ---- -->
+    <title>My Online Profile · Alex Rivera · Developer &amp; Creator</title>
+    <meta name="description" content="Alex Rivera's online profile — front-end developer, design enthusiast, and lifelong learner. Explore my work, interests, and favorite talks." />
+    <meta name="author" content="Alex Rivera" />
+    <meta name="keywords" content="Alex Rivera, developer, front-end, web design, portfolio, creative, HTML5, CSS, JavaScript" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ---- OPEN GRAPH (social sharing) ---- -->
+    <meta property="og:title" content="My Online Profile · Alex Rivera" />
+    <meta property="og:description" content="Front-end developer &amp; creative problem-solver. Check out my projects, favorite resources, and a curated TED Talk." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://myprofile.example.com" />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/1f3a8a/ffffff?text=Alex+Rivera+Profile" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="My Online Profile" />
+    <meta property="profile:first_name" content="Alex" />
+    <meta property="profile:last_name" content="Rivera" />
+
+    <!-- ---- TWITTER CARD (complementary) ---- -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="My Online Profile · Alex Rivera" />
+    <meta name="twitter:description" content="Front-end developer, design enthusiast, and lifelong learner." />
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/1f3a8a/ffffff?text=Alex+Rivera" />
+
+    <!-- ---- STYLING (clean & minimal) ---- -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem 2rem;
+            background: #f5f9fe;
+            color: #1a2636;
+            line-height: 1.7;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #b6cce3;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .avatar {
+            font-size: 4.2rem;
+            line-height: 1;
+            background: #d3e2f5;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 20, 40, 0.1);
+        }
+        h1 {
+            font-weight: 500;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            color: #0b2842;
+        }
+        .tagline {
+            color: #2f5477;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+        }
+        section {
+            background: white;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5eef8;
+        }
+        h2 {
+            font-weight: 500;
+            color: #1c3f60;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .iframe-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            background: #0b1d2e;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 16px;
+        }
+        .meta-badge {
+            background: #e3edf9;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1f4b6e;
+            letter-spacing: 0.3px;
+        }
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin-top: 0.5rem;
+        }
+        .profile-links a {
+            color: #1b5b7e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b8cfe0;
+        }
+        .profile-links a:hover {
+            border-bottom: 2px solid #1b5b7e;
+        }
+        footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #c7d8ea;
+            text-align: center;
+            color: #3e5f7a;
+            font-size: 0.9rem;
+        }
+        .social-meta-note {
+            background: #e6eff8;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #1e4463;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         PAGE CONTENT: "My Online Profile"
+         - semantic layout
+         - embedded iframe (YouTube video)
+         - all meta/OG/favicon in <head>
+         - SEO-optimized title & description
+         ============================================================ -->
+
+    <header>
+        <div class="avatar" aria-hidden="true">👤</div>
+        <div>
+            <h1>Safwaan Deerow</h1>
+            <p class="tagline">Front-end developer · Design enthusiast · Storyteller</p>
+        </div>
+        <span class="meta-badge" style="margin-left: auto;">✨ profile</span>
+    </header>
+
+    <main>
+
+        <!-- ========== ABOUT ========== -->
+        <section aria-labelledby="about-heading">
+            <h2 id="about-heading">📍 About Me</h2>
+            <p style="font-size: 1.05rem;">
+                I'm Alex — a developer who loves turning complex problems into 
+                clean, accessible interfaces. I’ve been building for the web for 
+                over 6 years, with a focus on <strong>semantic HTML</strong>, 
+                <em>performance</em>, and <strong>human-centered design</strong>.
+            </p>
+            <p>
+                I believe great code is both functional and beautiful. Outside of 
+                work, I enjoy photography, hiking, and contributing to open-source 
+                projects.
+            </p>
+            <div class="profile-links">
+                <span>🔗 <a href="#">GitHub</a></span>
+                <span>🐦 <a href="#">Twitter</a></span>
+                <span>💼 <a href="#">LinkedIn</a></span>
+                <span>📧 <a href="#">hello@alex.dev</a></span>
+            </div>
+        </section>
+
+        <!-- ========== EMBED: YouTube Video (iframe) ========== -->
+        <section aria-labelledby="embed-heading">
+            <h2 id="embed-heading">
+                🎥 Talk that inspires me
+                <span class="meta-badge">iframe · YouTube</span>
+            </h2>
+            <p style="margin-bottom: 1rem; color: #2b4f6e;">
+                A TED Talk about creativity, technology, and the future of design — 
+                embedded via <code>&lt;iframe&gt;</code>.
+            </p>
+            <div class="iframe-wrapper">
+                <!-- YouTube embed (responsive) -->
+                <iframe 
+                    src="https://www.youtube.com/embed/vs6K7jFxkEo?si=ICl0Fgky9dmsuZBV" 
+                    title="TED Talk: The next great design challenge"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen
+                    loading="lazy"
+                    aria-label="TED Talk video about design and technology">
+                </iframe>
+            </div>
+            <p style="margin-top: 0.6rem; font-size: 0.9rem; color: #3f637f;">
+                <span role="img" aria-label="info">ℹ️</span> 
+                <em>“The next great design challenge”</em> — a talk that reshaped how I think about user experience.
+            </p>
+        </section>
+
+        <!-- ========== QUICK FACTS / SOCIAL SHARING NOTE ========== -->
+        <section aria-labelledby="social-heading" style="background: #eaf2fb;">
+            <h2 id="social-heading">🌐 Open Graph &amp; SEO</h2>
+            <p>
+                This page includes <strong>meta tags</strong> for description, author, keywords, 
+                and Open Graph (<code>og:title</code>, <code>og:image</code>, etc.) to make 
+                sharing on social platforms rich and meaningful.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 0.5rem;">
+                <span class="social-meta-note">📄 title: “My Online Profile · Alex Rivera”</span>
+                <span class="social-meta-note">📝 description: “Front-end developer &amp; creative…”</span>
+                <span class="social-meta-note">🖼️ og:image (1200×630)</span>
+            </div>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem;">
+                <strong>🔍 SEO:</strong> keywords, author, and robots meta are set for discoverability.
+            </p>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>© 2025 Alex Rivera · Built with semantic HTML &amp; ❤️</p>
+        <p style="font-size: 0.8rem; color: #4d6f8f;">
+            Favicon: 👤 emoji + PNG fallback · All meta/OG tags in <code>&lt;head&gt;</code>.
+        </p>
+    </footer>
+
+</body>
+</html>
