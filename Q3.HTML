@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Favorite Websites</title>
+    <style>
+        /* Minimal styling for readability — all semantic HTML and required features are present */
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            line-height: 1.6;
+            color: #1e1e2a;
+            background: #fafcff;
+        }
+        a {
+            color: #1a5f8b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            margin: 2rem 0;
+            border: 1px solid #dce3ed;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            background: #e8edf5;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            background: #d0ddea;
+        }
+        ul, ol {
+            padding-left: 1.8rem;
+        }
+        li {
+            margin: 0.3rem 0;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #dce3ed;
+            font-size: 0.95rem;
+            color: #3d4a5c;
+        }
+        .site-list {
+            background: #f2f6fc;
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2.5rem;
+        }
+        .site-list li {
+            margin: 0;
+        }
+        .site-list a {
+            font-size: 1.1rem;
+        }
+        .section-anchor {
+            scroll-margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==============================================================
+     PAGE: My Favorite Websites
+     FEATURES:
+       - heading + intro
+       - 3 external links (target="_blank")
+       - ordered & unordered lists (hobbies / interests)
+       - internal anchor link (jump to #hobbies-section)
+       - "Back to top" link using #top
+     ============================================================== -->
+
+<!-- anchor for "Back to top" target -->
+<a id="top"></a>
+
+<header>
+    <h1>🌐 My Favorite Websites</h1>
+    <p style="font-size: 1.1rem; color: #2a3b4e;">
+        These are the digital corners I visit almost every day — for learning, 
+        creating, and staying inspired. Each one opens in a new tab so you can 
+        explore without losing your place here.
+    </p>
+</header>
+
+<main>
+
+    <!-- ====== SECTION: External links (open in new tabs) ====== -->
+    <section>
+        <h2>Top 3 Go‑To Sites</h2>
+        <ul class="site-list">
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> — code, collaborate, build.</li>
+            <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a> — tutorials, talks, and endless curiosity.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank" rel="noopener noreferrer">Wikipedia</a> — rabbit holes of knowledge.</li>
+        </ul>
+        <p style="font-size: 0.95rem; color: #3d5a73;">
+            <em>Tip:</em> all links open in a new tab (<code>target="_blank"</code>).
+        </p>
+    </section>
+
+    <hr />
+
+    <!-- ====== SECTION: Hobbies & Interests (ordered + unordered) ====== -->
+    <!-- This section has an id so we can link to it internally -->
+    <section id="hobbies-section" class="section-anchor">
+        <h2>🧩 Hobbies &amp; Interests</h2>
+        
+        <p><strong>Things I do for fun</strong> (ordered by how often I do them):</p>
+        <ol>
+            <li>Reading (fiction &amp; tech blogs)</li>
+            <li>Hiking &amp; nature photography</li>
+            <li>Tinkering with side projects (HTML/CSS/JS)</li>
+            <li>Playing the piano (badly, but happily)</li>
+        </ol>
+
+        <p><strong>Topics that spark my curiosity</strong> (unordered, always growing):</p>
+        <ul>
+            <li>🌍 Language learning &amp; linguistics</li>
+            <li>🧠 Cognitive science &amp; psychology</li>
+            <li>🎨 Minimalist design &amp; typography</li>
+            <li>☕ Coffee brewing methods</li>
+            <li>🚀 Space exploration &amp; astronomy</li>
+        </ul>
+    </section>
+
+    <hr />
+
+    <!-- ====== SECTION: Internal link (jump to hobbies) ====== -->
+    <section>
+        <h2>📌 Quick Navigation</h2>
+        <p>
+            <!-- Internal anchor link — jumps to the hobbies section above -->
+            <a href="#hobbies-section">⬇️ Jump to my hobbies &amp; interests</a>
+        </p>
+        <p style="font-size: 0.95rem; color: #3d5a73;">
+            (This is an <strong>internal link</strong> — it scrolls you down to the 
+            <code>#hobbies-section</code> without reloading the page.)
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        <!-- "Back to top" link — uses the #top anchor at the top of the page -->
+        <a href="#top" class="back-link">⬆ Back to top</a>
+    </p>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem;">
+        © 2025 · My Favorite Websites · built with semantic HTML &amp; anchors.
+    </p>
+</footer>
+
+</body>
+</html>
